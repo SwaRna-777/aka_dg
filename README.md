@@ -1,4 +1,4 @@
-# 🤖 HabitAI — AI-Powered Habit Tracker
+# 🤖 rabbit — AI-Powered 
 
 A full-stack habit tracking app with **4 AI features** powered by GPT-4o-mini.
 
