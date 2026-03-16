@@ -3,7 +3,6 @@
   "version": "2.0.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "7.1.0",
     "@radix-ui/react-dialog": "1.1.4",
     "@radix-ui/react-progress": "1.1.0",
     "@radix-ui/react-select": "2.1.4",
@@ -23,12 +22,15 @@
     "tailwindcss-animate": "1.0.7"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test":  "react-scripts test"
   },
-  "resolutions": { "core-js-pure": "3.36.1" },
-  "overrides": { "core-js-pure": "3.36.1" },
+  "overrides": {
+    "ajv": "8.17.1",
+    "ajv-keywords": "5.1.0",
+    "core-js-pure": "3.36.1"
+  },
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
     "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]

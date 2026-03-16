@@ -1,8 +1,12 @@
 modules = ["python-3.11", "nodejs-20"]
-hidden = [".pythonlibs", "node_modules", "__pycache__"]
+hidden = [".pythonlibs", "node_modules", "__pycache__", ".cache"]
 
 [nix]
 channel = "stable-24_05"
+
+[deployment]
+deploymentTarget = "cloudrun"
+run = ["bash", "start.sh"]
 
 [[ports]]
 localPort = 3000
@@ -49,5 +53,5 @@ agentRequireRestartOnSave = false
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd frontend && npm install --legacy-peer-deps 2>&1 | tail -5 && PORT=3000 BROWSER=none npm start"
+args = "cd frontend && rm -rf node_modules package-lock.json && npm install --legacy-peer-deps && PORT=3000 BROWSER=none FAST_REFRESH=false react-scripts start"
 waitForPort = 3000
